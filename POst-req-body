@@ -10,3 +10,21 @@ https://api.github.com/user/repos
   "has_projects": true,
   "has_wiki": true
 }
+
+
+GITHUB get request Test
+
+pm.test("Response time is less than 600ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(600);
+})
+pm.test("Status code is 200", function () {
+     pm.response.to.have.status(200);
+        });
+pm.test("Status code name has OK", function () {
+    pm.response.to.have.status("OK");
+});
+
+pm.test("Content-Type is present", function () {
+    pm.response.to.have.header("Content-Type");
+});
+
